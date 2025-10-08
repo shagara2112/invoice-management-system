@@ -6,7 +6,7 @@ import bcrypt from 'bcryptjs';
 // PUT update user (SUPER ADMIN only)
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const user = await verifyAuth(request);
@@ -20,7 +20,7 @@ export async function PUT(
 
     const body = await request.json();
     const { email, name, role, password } = body;
-    const { id } = params;
+    const { id } = await params;
 
     // Prevent self-destruction or self-role-change
     if (id === user.id) {
@@ -103,7 +103,7 @@ export async function PUT(
 // DELETE user (SUPER ADMIN only)
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const user = await verifyAuth(request);
@@ -115,7 +115,7 @@ export async function DELETE(
       );
     }
 
-    const { id } = params;
+    const { id } = await params;
 
     // Prevent self-destruction
     if (id === user.id) {
