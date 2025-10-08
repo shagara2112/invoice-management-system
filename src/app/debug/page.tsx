@@ -6,8 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 export default function DebugPage() {
-  const [envVars, setEnvVars] = useState({});
-  const [apiStatus, setApiStatus] = useState({});
+  const [envVars, setEnvVars] = useState<Record<string, string>>({});
+  const [apiStatus, setApiStatus] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function DebugPage() {
   };
 
   const checkApiStatus = async () => {
-    const status = {};
+    const status: Record<string, string> = {};
     
     try {
       const response = await fetch('/api/health');
