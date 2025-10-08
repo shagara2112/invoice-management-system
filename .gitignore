@@ -119,3 +119,4 @@ db/
 
 # Documentation files (optional - uncomment if you want to exclude)
 # *.md
+.vercel
