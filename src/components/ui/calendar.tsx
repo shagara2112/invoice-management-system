@@ -43,11 +43,11 @@ function Calendar({
         nav: cn(
           "flex items-center gap-1 w-full absolute top-0 inset-x-0 justify-between"
         ),
-        button_previous: cn(
+        nav_button_previous: cn(
           buttonVariants({ variant: buttonVariant }),
           "size-(--cell-size) aria-disabled:opacity-50 p-0 select-none"
         ),
-        button_next: cn(
+        nav_button_next: cn(
           buttonVariants({ variant: buttonVariant }),
           "size-(--cell-size) aria-disabled:opacity-50 p-0 select-none"
         ),
