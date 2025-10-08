@@ -462,7 +462,7 @@ export function InvoiceDetail({ invoice, isOpen, onClose, onUpdate }: InvoiceDet
                         <Calendar
                           mode="single"
                           selected={settlementData.settlementDate}
-                          onSelect={(date) => date && setSettlementData({ ...settlementData, settlementDate: date })}
+                          onSelect={(date: Date | undefined) => date && setSettlementData({ ...settlementData, settlementDate: date })}
                           initialFocus
                         />
                       </PopoverContent>

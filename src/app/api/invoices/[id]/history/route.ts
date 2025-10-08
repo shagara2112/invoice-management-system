@@ -45,7 +45,7 @@ export async function GET(
       try {
         history = await db.$queryRaw`
           SELECT * FROM "InvoiceHistory" WHERE invoiceId = ${invoiceId} ORDER BY changedAt DESC
-        `
+        ` as any[]
       } catch (rawError) {
         console.log('History fetching failed:', rawError)
       }

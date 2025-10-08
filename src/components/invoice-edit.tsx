@@ -221,7 +221,7 @@ export function InvoiceEdit({ invoice, isOpen, onClose, onSuccess }: InvoiceEdit
                   <Calendar
                     mode="single"
                     selected={formData.issueDate}
-                    onSelect={(date) => date && setFormData({ ...formData, issueDate: date })}
+                    onSelect={(date: Date | undefined) => date && setFormData({ ...formData, issueDate: date })}
                     initialFocus
                   />
                 </PopoverContent>
@@ -251,7 +251,7 @@ export function InvoiceEdit({ invoice, isOpen, onClose, onSuccess }: InvoiceEdit
                   <Calendar
                     mode="single"
                     selected={formData.dueDate}
-                    onSelect={(date) => date && setFormData({ ...formData, dueDate: date })}
+                    onSelect={(date: Date | undefined) => date && setFormData({ ...formData, dueDate: date })}
                     initialFocus
                   />
                 </PopoverContent>
