@@ -23,7 +23,7 @@ Berikut adalah kredensial Supabase Anda yang sudah dikonfigurasi:
 3. **Dapatkan Database URL:**
    - Go to Settings → Database
    - Copy Connection string
-   - Format: `postgresql://postgres:[YOUR-PASSWORD]@db.vzavjwkspqmqshmcwdyj.supabase.co:5432/postgres`
+   - Format: `postgresql://postgres:@Danpei2112@db.vzavjwkspqmqshmcwdyj.supabase.co:5432/postgres`
 
 4. **Dapatkan Service Role Key:**
    - Go to Settings → API
