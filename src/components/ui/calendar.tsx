@@ -6,7 +6,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from "lucide-react"
-import { DayPicker } from "react-day-picker"
+import { DayPicker, CaptionLayout } from "react-day-picker"
 
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/components/ui/button"
@@ -53,7 +53,7 @@ function Calendar({
         ),
         caption: cn("flex items-center justify-center h-(--cell-size) w-full px-(--cell-size)"),
         dropdown: cn("w-full flex items-center text-sm font-medium justify-center h-(--cell-size) gap-1.5 relative has-focus:border-ring border border-input shadow-xs has-focus:ring-ring/50 has-focus:ring-[3px] rounded-md absolute bg-popover inset-0 opacity-0"),
-        caption_label: cn("select-none font-medium", captionLayout === "label" ? "text-sm" : "rounded-md pl-2 pr-1 flex items-center gap-1 text-sm h-8 [&>svg]:text-muted-foreground [&>svg]:size-3.5"),
+        caption_label: cn("select-none font-medium", captionLayout === CaptionLayout.Label ? "text-sm" : "rounded-md pl-2 pr-1 flex items-center gap-1 text-sm h-8 [&>svg]:text-muted-foreground [&>svg]:size-3.5"),
         table: "w-full border-collapse",
         head_row: cn("flex"),
         head_cell: cn("text-muted-foreground rounded-md flex-1 font-normal text-[0.8rem] select-none"),
