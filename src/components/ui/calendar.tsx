@@ -51,54 +51,25 @@ function Calendar({
           buttonVariants({ variant: buttonVariant }),
           "size-(--cell-size) aria-disabled:opacity-50 p-0 select-none"
         ),
-        month_caption: cn(
-          "flex items-center justify-center h-(--cell-size) w-full px-(--cell-size)"
-        ),
-        dropdowns: cn(
-          "w-full flex items-center text-sm font-medium justify-center h-(--cell-size) gap-1.5"
-        ),
-        dropdown_root: cn(
-          "relative has-focus:border-ring border border-input shadow-xs has-focus:ring-ring/50 has-focus:ring-[3px] rounded-md"
-        ),
-        dropdown: cn(
-          "absolute bg-popover inset-0 opacity-0"
-        ),
-        caption_label: cn(
-          "select-none font-medium",
-          captionLayout === "label"
-            ? "text-sm"
-            : "rounded-md pl-2 pr-1 flex items-center gap-1 text-sm h-8 [&>svg]:text-muted-foreground [&>svg]:size-3.5"
-        ),
+        caption: cn("flex items-center justify-center h-(--cell-size) w-full px-(--cell-size)"),
+        dropdown: cn("w-full flex items-center text-sm font-medium justify-center h-(--cell-size) gap-1.5"),
+        dropdown: cn("relative has-focus:border-ring border border-input shadow-xs has-focus:ring-ring/50 has-focus:ring-[3px] rounded-md"),
+        dropdown: cn("absolute bg-popover inset-0 opacity-0"),
+        caption_label: cn("select-none font-medium", captionLayout === "label" ? "text-sm" : "rounded-md pl-2 pr-1 flex items-center gap-1 text-sm h-8 [&>svg]:text-muted-foreground [&>svg]:size-3.5"),
         table: "w-full border-collapse",
-        weekdays: cn("flex"),
-        weekday: cn(
-          "text-muted-foreground rounded-md flex-1 font-normal text-[0.8rem] select-none"
-        ),
-        week: cn("flex w-full mt-2"),
-        week_number_header: cn(
-          "select-none w-(--cell-size)"
-        ),
-        week_number: cn(
-          "text-[0.8rem] select-none text-muted-foreground"
-        ),
-        day: cn(
-          "relative w-full h-full p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md group/day aspect-square select-none"
-        ),
-        range_start: cn(
-          "rounded-l-md bg-accent"
-        ),
-        range_middle: cn("rounded-none"),
-        range_end: cn("rounded-r-md bg-accent"),
-        today: cn(
-          "bg-accent text-accent-foreground rounded-md data-[selected=true]:rounded-none"
-        ),
-        outside: cn(
-          "text-muted-foreground aria-selected:text-muted-foreground"
-        ),
-        disabled: cn(
-          "text-muted-foreground opacity-50"
-        ),
-        hidden: cn("invisible"),
+        head_row: cn("flex"),
+        head_cell: cn("text-muted-foreground rounded-md flex-1 font-normal text-[0.8rem] select-none"),
+        tbody: cn("flex flex-col space-y-1"),
+        week_number_header: cn("select-none w-(--cell-size)"),
+        week_number: cn("text-[0.8rem] select-none text-muted-foreground"),
+        day: cn("text-center text-sm p-0 relative [&:has[aria-selected]]:bg-accent first:[&:has[aria-selected]]:rounded-l-md last:[&:has[aria-selected]]:rounded-r-md focus-within:relative focus-within:z-20"),
+        day_range_start: cn("day-range-end"),
+        day_range_middle: cn("aria-selected:bg-accent aria-selected:text-accent-foreground"),
+        day_range_end: cn("day-range-end"),
+        day_today: cn("bg-accent text-accent-foreground"),
+        day_outside: cn("text-muted-foreground opacity-50"),
+        day_disabled: cn("text-muted-foreground opacity-50"),
+        day_hidden: cn("invisible"),
         ...classNames,
       }}
       components={{
